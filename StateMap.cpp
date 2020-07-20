@@ -14,7 +14,7 @@ StateMap::StateMap(const Shared* const sh, const int s, const int n, const int l
       uint32_t n0 = StateTable::next(state, 2) * 3 + 1;
       uint32_t n1 = StateTable::next(state, 3) * 3 + 1;
       for( uint32_t s = 0; s < numContextSets; ++s ) {
-        t[s * numContextsPerSet + cx] = ((n1 << 20U) / (n0 + n1)) << 12U;
+        t[s * numContextsPerSet + cx] = ((n1 << 20U) / (n0 + n1)) << 12U; //定义在adaptivemap中, t中一个元素32bit
       }
     }
   } else if( mapType == Run ) { // when the context is a run count: we have a-priory for p
